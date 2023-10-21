@@ -3,6 +3,10 @@ import "./App.css";
 import Home from "./screens/home";
 import About from "./screens/About";
 import Navbar from "./components/Navbar";
+
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import {
   BrowserRouter,
   Route,
