@@ -3,15 +3,19 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/SideBar";
 import MusicPlayer from "../components/MusicPlayer";
 import MusicList from "../components/MusicList";
+import Playlists from "../components/playList";
+import { css } from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 
 function Home() {
+  const homeCss = css`
+    display:flex;
+  `;
   return (
-    <div>
-      <div className="container mx-auto p-4 flex">
-        <Sidebar />
-        <MusicPlayer />
-        <MusicList />
-      </div>
+    <div css={homeCss}>
+      <Sidebar />
+      <MusicPlayer />
+      <Playlists />
     </div>
   );
 }

@@ -4,10 +4,9 @@ import styled from "@emotion/styled";
 
 const Img1css = css`
   height: auto;
-  max-width: 32rem; /* Equivalent to max-w-lg in Tailwind */
-  border-radius: 30px; /* Equivalent to rounded-[30px] in Tailwind */
-  box-shadow: none; /* Equivalent to shadow-none in Tailwind */
-  transition: box-shadow 0.3s ease-in-out; /* Equivalent to transition-shadow in Tailwind */
+  max-width: 50%;
+  border-radius: 30px; 
+  transition: box-shadow 0.3s ease-in-out; 
   transform: translateY(0);
   transition: transform 0.3s ease-in-out;
   &:hover {
@@ -60,21 +59,29 @@ const ImgShine = css`
 `;
 const Invisiblediv=css`
         position: relative;
-        display: flex; `
+        display: flex;
+         `
+  
 const MusicPlayer = () => {
+  const mainContainer = css`
+    width:25%;
+    margin:auto;
+    text:center;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+  `
   return (
-    <div className="w-1/2 p-4 ">
+    <div  css={mainContainer}>
       <div  css={Invisiblediv} >
       
         <img
           src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
           css={combinedStyles}
-          // class="h-auto max-w-lg rounded-[30px] shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30  shadow-md"
+         
           alt=""
         />
-        {/* <div css={ImgShine}>
-          
-        </div> */}
       </div>
       <h1
         css={css`

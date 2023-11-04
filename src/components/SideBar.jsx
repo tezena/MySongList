@@ -3,7 +3,6 @@ import React from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-
 import {
   Card,
   Typography,
@@ -41,10 +40,8 @@ const listItems = [
   },
 ];
 
-
 const CardCss = css`
-
-  height: calc(100vh - 2rem);
+  height: 80%;
   width: 25%;
   padding: 1rem;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -58,15 +55,44 @@ const CardCss = css`
 `;
 
 const ListItemCss = css`
-padding:1.5rem ;
-fontSized:1.5rem ;
-fontWeight:lighter;
-`
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  transition: transform 0.5s;
+  display: flex;
+  position: relative;
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
 
+const shineDiveCss = css`
+  position: absolute;
+  top: 0;
+  inset: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 5;
+  display: block;
+  transform: skewX(-12deg);
+  background: linear-gradient(to right, transparent, white);
+  opacity: 0;
+  transition: transform 0.5s, background 0.5s, opacity 0.5s;
+
+  &:hover {
+    animation: shine 1.3s 1;
+  }
+  @keyframes shine {
+    100% {
+      left: "125%";
+    }
+  }
+`;
 const Sidebar = () => {
   return (
-     <Card    css={CardCss}
-    //   className="h-[calc(100vh-2rem)] w-1/4 p-4 shadow-3xl  flex flex-col bg-[#F00E59] text-white rounded-[20px] mx-10"
+    <Card
+      css={CardCss}
+      //   className="h-[calc(100vh-2rem)] w-1/4 p-4 shadow-3xl  flex flex-col bg-[#F00E59] text-white rounded-[20px] mx-10"
     >
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
@@ -76,10 +102,10 @@ const Sidebar = () => {
       <List className="flex-col">
         {listItems.map((item) => {
           return (
-            <ListItem className="hover:-translate-y-2  duration-500 group flex  relative ">
+            <ListItem css={ListItemCss}>
               <ListItemPrefix>{item.icon}</ListItemPrefix>
               {item.text}
-              <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-60 group-hover:animate-shine" />
+              <div css={shineDiveCss} />
             </ListItem>
           );
         })}
@@ -89,3 +115,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+// className =
+//   "absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-60 group-hover:animate-shine";

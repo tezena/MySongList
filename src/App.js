@@ -14,8 +14,15 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const appCss = css`
+  height:100vh;
+  width:100vw;
+  position:fixed;
+
+  `
   return (
-    <div className="">
+    
+    <div css={appCss}>
       <Navbar />
       <BrowserRouter>
         <Routes>
