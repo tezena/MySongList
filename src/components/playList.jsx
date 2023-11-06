@@ -81,7 +81,7 @@ function Playlists() {
   const textContainerCss = css`
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 3rem 1rem 0.3rem;
+    padding: 0 3rem 1rem 0.3rem;
     font-family: "Ubuntu", sans-serif;
     font-weight: bolder;
     align-items: center;

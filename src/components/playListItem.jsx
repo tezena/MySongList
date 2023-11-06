@@ -29,9 +29,10 @@ const PlaylistListItem = ({ id, title, imgSrc, creationDate }) => {
   `;
 
   const songTitleCss = css`
-  margin:0 .5 rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight:semi-bold`;
+    margin: 0 0.5 rem;
+    font-family: "Lobster", sans-serif;
+    font-weight: semi-bold;
+  `;
   const singerNameCss = css`
     font-family: "Roboto  ", sans-serif;
     font-weight: 300;

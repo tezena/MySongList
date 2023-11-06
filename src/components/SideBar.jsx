@@ -41,6 +41,8 @@ const listItems = [
 ];
 
 const CardCss = css`
+  position:fixed;
+  left:5%;
   height: 80%;
   width: 25%;
   padding: 1rem;
@@ -90,7 +92,7 @@ const shineDiveCss = css`
 `;
 const Sidebar = () => {
   return (
-    <Card
+    <div
       css={CardCss}
       //   className="h-[calc(100vh-2rem)] w-1/4 p-4 shadow-3xl  flex flex-col bg-[#F00E59] text-white rounded-[20px] mx-10"
     >
@@ -110,7 +112,7 @@ const Sidebar = () => {
           );
         })}
       </List>
-    </Card>
+    </div>
   );
 };
 

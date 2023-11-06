@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import MusicPlayerSlider from "./musicPlayerSlider";
 
 const Img1css = css`
   height: auto;
-  max-width: 50%;
+ 
+  max-width: 100%;
   border-radius: 30px; 
   transition: box-shadow 0.3s ease-in-out; 
   transform: translateY(0);
@@ -64,33 +66,46 @@ const Invisiblediv=css`
   
 const MusicPlayer = () => {
   const mainContainer = css`
-    width:25%;
-    margin:auto;
-    text:center;
-    padding:20px;
-    display:flex;
-    flex-direction:column;
-    position:fixed;
+    width: 35%;
+    margin: auto;
+    text: center;
+    padding: 20px;
+ 
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  `;
+
+  const textDivCss = css`
+    margin-top:2rem;
+    padding: .5rem 0;
+    height:40%
   `
   return (
-    <div  css={mainContainer}>
-      <div  css={Invisiblediv} >
-      
+    <div css={mainContainer}>
+      <div css={Invisiblediv}>
         <img
           src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
           css={combinedStyles}
-         
           alt=""
         />
       </div>
-      <h1
-        css={css`
-          color: red;
-          fontsize: 40px;
-        `}
-      >
-        Hello world.
-      </h1>
+      <div css={textDivCss}>
+        <h1
+          css={css`
+            color: black;
+            font-size: 2rem;
+            font-family: "Lobster", sans-serif;
+            font-weight: bolder;
+          `}
+        >
+          Bohemian Rhapsody
+        </h1>
+        <MusicPlayerSlider></MusicPlayerSlider>
+      </div>
     </div>
   );
 };
