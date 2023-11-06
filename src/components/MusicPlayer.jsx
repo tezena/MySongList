@@ -5,17 +5,21 @@ import MusicPlayerSlider from "./musicPlayerSlider";
 
 const Img1css = css`
   height: auto;
- 
   max-width: 100%;
-  border-radius: 30px; 
-  transition: box-shadow 0.3s ease-in-out; 
+  border-radius: 30px;
   transform: translateY(0);
   transition: transform 0.3s ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1); /* Equivalent to hover:shadow-lg in Tailwind */
+
+    /* Equivalent to hover:shadow-lg in Tailwind */
   }
 `;
+//  box-shadow: 0 15px 1px -7px rgba(240, 14, 89, 0.6);
 
 const shadowMd = css`
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -25,7 +29,7 @@ const shadowMd = css`
 const combinedStyles = css`
   ${Img1css};
 
-  ${shadowMd};
+
 `;
 
 
@@ -45,9 +49,9 @@ const ImgShine = css`
   transform: skewX(0deg);
   background: linear-gradient(to right, transparent, white);
   opacity: 0.6;
+  
 
- 
- &:hover{
+  &:hover {
     animation: shine 1s 1; /* Use the 'shine' keyframes */
   }
   @keyframes shine {
@@ -67,6 +71,7 @@ const Invisiblediv=css`
 const MusicPlayer = () => {
   const mainContainer = css`
     width: 35%;
+    height:100%;
     margin: auto;
     text: center;
     padding: 20px;
@@ -74,7 +79,7 @@ const MusicPlayer = () => {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 40%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
   `;
@@ -84,6 +89,13 @@ const MusicPlayer = () => {
     padding: .5rem 0;
     height:40%
   `
+   const singerNameCss = css`
+     font-family: "Roboto  ", sans-serif;
+     font-weight: 300;
+     font-size: 1.2rem;
+     opacity: .3;
+   `;
+
   return (
     <div css={mainContainer}>
       <div css={Invisiblediv}>
@@ -94,16 +106,24 @@ const MusicPlayer = () => {
         />
       </div>
       <div css={textDivCss}>
-        <h1
+        <div
           css={css`
-            color: black;
-            font-size: 2rem;
-            font-family: "Lobster", sans-serif;
-            font-weight: bolder;
+            margin-bottom: 1rem;
           `}
         >
-          Bohemian Rhapsody
-        </h1>
+          <h1
+            css={css`
+              color: black;
+              font-size: 2rem;
+              font-family: "Lobster", sans-serif;
+              font-weight: bolder;
+            `}
+          >
+            Bohemian Rhapsody
+          </h1>
+          <h3 css={singerNameCss}>Ed Sheeran</h3>
+        </div>
+
         <MusicPlayerSlider></MusicPlayerSlider>
       </div>
     </div>

@@ -16,8 +16,9 @@ const PlaylistListItem = ({ id, title, imgSrc, creationDate }) => {
   const listItemCss = css`
     width: 100%;
     display: flex;
-    padding: 0.8rem 0 .8rem 0.2rem;
+    padding: 0.8rem 0 0.8rem 0.2rem;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 1.95px 0;
   `;
 
   const playListDetailCss = css`
