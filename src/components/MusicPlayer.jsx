@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import MusicPlayerSlider from "./musicPlayerSlider";
 
+
 const Img1css = css`
   height: auto;
   max-width: 100%;

@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/SideBar";
 import MusicPlayer from "../components/MusicPlayer";
-import MusicList from "../components/MusicList";
 import Playlists from "../components/playList";
 import { css } from "@emotion/react";
 /** @jsxImportSource @emotion/react */
