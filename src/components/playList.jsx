@@ -73,9 +73,18 @@ function Playlists() {
 
   const mainContainerCss = css`
     width: 30%;
+    @media(max-width:950px){
+      width:33%
+    }
     position: fixed;
-    right: 30px;
+    right: .5%;
+    @media(max-width:720px){
+     
+    
+     width:100%;
+    }
     padding: 20px;
+    padding-right:0;
    
   `;
   const textContainerCss = css`
@@ -85,6 +94,9 @@ function Playlists() {
     font-family: "Ubuntu", sans-serif;
     font-weight: bolder;
     align-items: center;
+    @media(max-width:720px){
+      visibility:hidden
+    }
   `;
 
   const ulCss = css`
@@ -92,7 +104,7 @@ function Playlists() {
     position: fixed;
     height: 70%;
     padding-right:20px;
-    width:25%
+    width:28%
   `;
 
   return (

@@ -82,19 +82,36 @@ const MusicPlayer = () => {
     position: fixed;
     top: 68%;
     left: 50%;
+    @media(max-width:720px){
+      top:64%;
+      position:relative;
+    }
     transform: translate(-50%, -50%);
   `;
+   const responsiveFontSizes = {
+     small: 1,
+     medium: 1.5,
+     large: 2,
+   };
+  
 
   const textDivCss = css`
-    margin-top:2rem;
-    padding: .5rem 0;
-    height:40%
-  `
+    margin-top: 2%;
+   
+    padding: 0.5rem 0;
+    height: 40%;
+  `;
    const singerNameCss = css`
      font-family: "Roboto  ", sans-serif;
      font-weight: 300;
      font-size: 1.2rem;
-     opacity: .3;
+     @media (max-width: 1250px) {
+       font-size: ${responsiveFontSizes.small}rem;
+     }
+     @media (max-width: 950px) {
+       font-size: ${responsiveFontSizes.small*.5}rem;
+     }
+     opacity: 0.3;
    `;
 
   return (
@@ -115,7 +132,13 @@ const MusicPlayer = () => {
           <h1
             css={css`
               color: black;
-              font-size: 2rem;
+              font-size: ${responsiveFontSizes.large}rem;
+              @media (max-width: 1250px) {
+                font-size: ${responsiveFontSizes.medium}rem;
+              }
+              @media (max-width: 950px) {
+                font-size: ${responsiveFontSizes.small}rem;
+              }
               font-family: "Lobster", sans-serif;
               font-weight: bolder;
             `}

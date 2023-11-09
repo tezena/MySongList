@@ -10,11 +10,20 @@ function Home() {
   const homeCss = css`
     display:flex;
   `;
+
+  const secondContainerCss = css`
+  display:flex;
+  @media (max-width: 720px): {
+    flex-size: column,
+  }
+  `;
   return (
     <div css={homeCss}>
       <Sidebar />
-      <MusicPlayer />
-      <Playlists />
+      <div css={secondContainerCss}>
+        <MusicPlayer />
+        <Playlists />
+      </div>
     </div>
   );
 }

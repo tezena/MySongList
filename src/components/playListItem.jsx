@@ -4,10 +4,23 @@ import { BsPlayCircle } from "react-icons/bs";
 
 const PlaylistListItem = ({ id, title, imgSrc, creationDate }) => {
   //   const createdYear = getYearFromDate(creationDate);
-
+ const responsiveFontSizes = {
+   small: 1,
+   medium: 1.5,
+   large: 2,
+ };
+  
   const imageCss = css`
     width: 5rem;
     height: 4rem;
+    @media (max-width: 1250px) {
+      height: 2.5rem;
+      width: 3.5rem;
+    }
+    @media (max-width: 850px) {
+      height: 2rem;
+      width: 3rem;
+    }
     border-radius: 7px;
     margin: 0 1rem;
     object-fit: contian;
@@ -33,12 +46,24 @@ const PlaylistListItem = ({ id, title, imgSrc, creationDate }) => {
     margin: 0 0.5 rem;
     font-family: "Lobster", sans-serif;
     font-weight: semi-bold;
+    @media (max-width: 1250px) {
+      font-size: ${responsiveFontSizes.small*.9}rem;
+    }
+    @media (max-width: 1050px) {
+      font-size: ${responsiveFontSizes.small*.6}rem;
+    }
   `;
   const singerNameCss = css`
     font-family: "Roboto  ", sans-serif;
     font-weight: 300;
-    font-size:.8rem;
-    opacity:.7
+    font-size: 0.8rem;
+    @media (max-width: 1250px) {
+      font-size: .6rem;
+    }
+    @media (max-width: 1050px) {
+      font-size: .5rem;
+    }
+    opacity: 0.7;
   `;
 
   const dateTextCss = css`
@@ -46,7 +71,7 @@ const PlaylistListItem = ({ id, title, imgSrc, creationDate }) => {
     font-weight: 600;
     font-size: 0.8rem;
   `;
-  
+ 
 
   return (
     <li css={listItemCss}>

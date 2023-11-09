@@ -24,9 +24,17 @@ import {
 } from "@heroicons/react/24/solid";
 
 const IconsCss = css`
-   height:2rem;
-   width:2rem;
-`
+  height: 2rem;
+  width: 2rem;
+  @media (max-width: 1250px) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  @media (max-width: 1050px) {
+    height: 1rem;
+    width: 1rem;
+  }
+`;
 
 const listItems = [
   {
@@ -53,6 +61,9 @@ const CardCss = css`
   height: 80%;
   width: 25%;
   padding: 1rem;
+  @media(max-width:950px){
+    padding:.5rem;
+  }
   box-shadow: rgba(240, 14, 89, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(240, 14, 89, 0.25) 0px -2px 6px 0px inset;
@@ -65,10 +76,24 @@ const CardCss = css`
 
   margin: 0 10px;
 `;
+const responsiveFontSizes = {
+  small:1 ,
+  medium:1.5,
+  large: 2,
+};
 
 const ListItemCss = css`
   padding: 1.5rem;
-  font-size: 2rem;
+  @media(max-width:950px){
+    padding:1rem;
+  }
+  font-size: ${responsiveFontSizes.large}rem;
+  @media(max-width:1250px){
+    font-size:${responsiveFontSizes.medium}rem;
+  }
+   @media(max-width:1050px){
+    font-size:${responsiveFontSizes.small}rem;
+  }
   font-weight:lighter;
   transition: transform 0.5s;
   display: flex;
@@ -109,6 +134,12 @@ const Sidebar = () => {
       <div
         css={css`
           font-size: 2.5rem;
+          @media (max-width: 1250px) {
+            font-size: ${responsiveFontSizes.large}rem;
+          }
+          @media (max-width: 1250px) {
+            font-size: ${responsiveFontSizes.medium}rem;
+          }
           padding: 0.5rem 0.5rem 1.5rem;
         `}
       >
@@ -119,7 +150,13 @@ const Sidebar = () => {
           return (
             <li css={ListItemCss}>
               <div css={css``}>{item.icon}</div>
-              <div css={css`margin:0 1rem`}>{item.text}</div>
+              <div
+                css={css`
+                  margin: 0 1rem;
+                `}
+              >
+                {item.text}
+              </div>
               <div css={shineDiveCss} />
             </li>
           );

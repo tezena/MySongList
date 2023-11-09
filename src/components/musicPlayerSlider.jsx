@@ -87,6 +87,12 @@ export default function MusicPlayerSlider() {
     opacity: ${isVisible ? 1 : 0};
     transition: opacity 0.3s ease; /* Adjust the duration and easing as needed */
   `;
+  const styleCss1 = {
+  fontSize: "3rem",
+  '@media (max-width: 720px)': {
+    fontSize: "1.5rem",
+  },
+};
 
   const [isVisible, setIsVisible] = useState(false);
   const handleMouseEnter = () => {
@@ -115,6 +121,7 @@ export default function MusicPlayerSlider() {
     <Box
       sx={{
         width: "100%",
+
         overflow: "hidden",
       }}
     >
@@ -188,26 +195,20 @@ export default function MusicPlayerSlider() {
           }}
         >
           <IconButton aria-label="previous song">
-            <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
+            <FastRewindRounded sx={styleCss1} htmlColor={mainIconColor} />
           </IconButton>
           <IconButton
             aria-label={paused ? "play" : "pause"}
             onClick={() => setPaused(!paused)}
           >
             {paused ? (
-              <PlayArrowRounded
-                sx={{ fontSize: "3rem" }}
-                htmlColor={mainIconColor}
-              />
+              <PlayArrowRounded sx={styleCss1} htmlColor={mainIconColor} />
             ) : (
-              <PauseRounded
-                sx={{ fontSize: "3rem" }}
-                htmlColor={mainIconColor}
-              />
+              <PauseRounded sx={styleCss1} htmlColor={mainIconColor} />
             )}
           </IconButton>
           <IconButton aria-label="next song">
-            <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
+            <FastForwardRounded sx={styleCss1} htmlColor={mainIconColor} />
           </IconButton>
         </Box>
 
