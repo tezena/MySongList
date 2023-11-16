@@ -27,66 +27,20 @@ const shadowMd = css`
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
 `;
 
-const combinedStyles = css`
-  ${Img1css};
 
-
-`;
-
-
-
-
-
-const ImgShine = css`
-  /* Base styles for the element */
-  position: absolute;
-  top: 0;
-  left: -10%;
-  right: 0;
-  bottom: 0;
-  width: 50%;
-  z-index: 10;
-  display: block;
-  transform: skewX(0deg);
-  background: linear-gradient(to right, transparent, white);
-  opacity: 0.6;
-  
-
-  &:hover {
-    animation: shine 1s 1; /* Use the 'shine' keyframes */
-  }
-  @keyframes shine {
-    0% {
-      left: 0;
-    }
-    100% {
-      left: 125%;
-    }
-  }
-`;
-const Invisiblediv=css`
-        position: relative;
-        display: flex;
-         `
   
 const MusicPlayer = () => {
   const mainContainer = css`
-    width: 35%;
-    height:100%;
-    margin: auto;
+    width: 50%;
     text: center;
     padding: 20px;
- 
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 68%;
-    left: 50%;
-    @media(max-width:720px){
-      top:64%;
-      position:relative;
-    }
-    transform: translate(-50%, -50%);
+    margin:auto 5%;
+  @media(max-width:720px){
+    width:100%;
+    padding-bottom:0;
+    padding-right:10%;
+  }
+    
   `;
    const responsiveFontSizes = {
      small: 1,
@@ -115,14 +69,12 @@ const MusicPlayer = () => {
    `;
 
   return (
-    <div css={mainContainer}>
-      <div css={Invisiblediv}>
+    <div css={mainContainer} >
         <img
           src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
-          css={combinedStyles}
+          css={Img1css}
           alt=""
         />
-      </div>
       <div css={textDivCss}>
         <div
           css={css`

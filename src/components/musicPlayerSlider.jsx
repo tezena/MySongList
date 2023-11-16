@@ -48,13 +48,13 @@ const WallPaper = styled("div")({
 });
 
 const Widget = styled("div")(({ theme }) => ({
-  padding: 16,
+  padding: 8,
   borderRadius: 16,
   width: 343,
   maxWidth: "100%",
   margin: "auto",
   position: "relative",
-  zIndex: 1,
+  zIndex: 5,
   backgroundColor:
     theme.palette.mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.4)",
   backdropFilter: "blur(40px)",
@@ -82,11 +82,7 @@ const TinyText = styled(Typography)({
 
 export default function MusicPlayerSlider() {
 
-  const VolumeControls = ({ isVisible }) => css`
-    display: flex;
-    opacity: ${isVisible ? 1 : 0};
-    transition: opacity 0.3s ease; /* Adjust the duration and easing as needed */
-  `;
+ 
   const styleCss1 = {
   fontSize: "3rem",
   '@media (max-width: 720px)': {
@@ -102,6 +98,16 @@ export default function MusicPlayerSlider() {
   const handleMouseLeave = () => {
     setIsVisible(false);
   };
+   const VolumeControls = ({ isVisible }) => css`
+     display: flex;
+     /* Adjust the duration and easing as needed */
+     @media (max-width: 720px) {
+       opacity: 1;
+       visibility: visible;
+     }
+     opacity: ${isVisible ? 1 : 0};
+     transition: opacity 0.3s ease;
+   `;
   const theme = useTheme();
   const duration = 200; // seconds
   const [position, setPosition] = React.useState(32);
@@ -217,7 +223,7 @@ export default function MusicPlayerSlider() {
           direction="row"
           sx={{ mb: 1, px: 1 }}
           alignItems="center"
-          style={{ visibility: isVisible ? "visible" : "hidden" }}
+          // style={{ visibility: isVisible ? "visible" : "hidden" }}
           css={VolumeControls({ isVisible })}
         >
           <VolumeDownRounded htmlColor={lightIconColor} />

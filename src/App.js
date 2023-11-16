@@ -7,21 +7,14 @@ import Navbar from "./components/Navbar";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import {
-  BrowserRouter,
-  Route,
- Routes
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const appCss = css`
-  height:100vh;
-  width:100vw;
-  position:fixed;
-
-  `
-  return (
+    width: 100vw;
     
+  `;
+  return (
     <div css={appCss}>
       <Navbar />
       <BrowserRouter>

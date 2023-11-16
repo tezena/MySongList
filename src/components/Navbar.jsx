@@ -18,17 +18,23 @@ const Navbar = () => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 6rem;
+    padding: 1rem 5%;
     width: 100%;
+    box-shadow: none;
+
+    &:hover {
+      transition: transform 0.3s ease-in-out;
+      box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    }
   `;
   const ulCss = css`
     display: flex;
-    gap: 5rem;
-    font-size: 1.125rem;
-    width: 50%;
+    gap: 10%;
+    width: 60%;
     font-family: "Ubonto ", sans-serif;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 100%;
   `;
   const activeLinkCss = () => css`
     margin-top: 0.5rem;
@@ -136,7 +142,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <Search>
+        <Search css={css`width:30%`}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>

@@ -26,6 +26,11 @@ import {
 const IconsCss = css`
   height: 2rem;
   width: 2rem;
+  @media (max-width: 540px) {
+    height: 2rem;
+    width: 1.5rem;
+    margin-left:1rem;
+  }
   @media (max-width: 1250px) {
     height: 1.5rem;
     width: 1.5rem;
@@ -56,8 +61,7 @@ const listItems = [
 ];
 
 const CardCss = css`
-  position: fixed;
-  left: 5%;
+  
   height: 80%;
   width: 25%;
   padding: 1rem;
@@ -84,8 +88,14 @@ const responsiveFontSizes = {
 
 const ListItemCss = css`
   padding: 1.5rem;
+ 
+   @media(max-width:540px){
+    padding:.5rem;
+    
+  }
   @media(max-width:950px){
     padding:1rem;
+    
   }
   font-size: ${responsiveFontSizes.large}rem;
   @media(max-width:1250px){
@@ -153,6 +163,9 @@ const Sidebar = () => {
               <div
                 css={css`
                   margin: 0 1rem;
+                  @media (max-width:540px){
+                    visibility:hidden;
+                  }
                 `}
               >
                 {item.text}

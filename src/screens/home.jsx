@@ -8,19 +8,24 @@ import { css } from "@emotion/react";
 
 function Home() {
   const homeCss = css`
-    display:flex;
+    display: flex;
+    width: 100%;
+    padding: 2% 2% 2% 4%;
   `;
 
   const secondContainerCss = css`
-  display:flex;
-  @media (max-width: 720px): {
-    flex-size: column,
-  }
+    width: 70;
+    display: flex;
+    justify-content: space-evenly;
+    @media (max-width: 720px) {
+      display: block;
+    }
   `;
+
   return (
-    <div css={homeCss}>
+    <div css={homeCss} name="home">
       <Sidebar />
-      <div css={secondContainerCss}>
+      <div css={secondContainerCss} name="secondContainer">
         <MusicPlayer />
         <Playlists />
       </div>

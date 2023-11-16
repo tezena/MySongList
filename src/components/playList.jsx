@@ -72,20 +72,17 @@ function Playlists() {
   ];
 
   const mainContainerCss = css`
-    width: 30%;
-    @media(max-width:950px){
-      width:33%
-    }
-    position: fixed;
-    right: .5%;
-    @media(max-width:720px){
-     
-    
-     width:100%;
+    width: 50%;
+
+    @media (max-width: 720px) {
+      width: 100%;
+      padding-top: 0;
+
+      position: relative;
+      z-index: 3;
+      top: -10%;
     }
     padding: 20px;
-    padding-right:0;
-   
   `;
   const textContainerCss = css`
     display: flex;
@@ -94,8 +91,9 @@ function Playlists() {
     font-family: "Ubuntu", sans-serif;
     font-weight: bolder;
     align-items: center;
-    @media(max-width:720px){
-      visibility:hidden
+    @media (max-width: 720px) {
+      padding-top: 0;
+      visibility: hidden;
     }
   `;
 
@@ -103,8 +101,13 @@ function Playlists() {
     overflow: auto;
     position: fixed;
     height: 70%;
-    padding-right:20px;
-    width:28%
+
+    width: 28%;
+    @media (max-width: 720px) {
+      width: 60%;
+      padding-right: 1rem;
+      height: 50%;
+    }
   `;
 
   return (
